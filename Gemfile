@@ -10,6 +10,8 @@ gem 'jbuilder'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'letter_opener'
 end
 
 group :development do

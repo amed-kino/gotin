@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   match '/about' => 'pages#about', via: :get
   match '/contact' => 'pages#contact', via: :get
+  match '/snippet' => 'snippet#home', via: :get
 
   root 'pages#home'
 

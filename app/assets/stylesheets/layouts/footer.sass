@@ -1,0 +1,107 @@
+#footer
+  background-color: #333
+  border-top-color: rgba(0,0,0,0.2)
+  position: relative
+  border-top: 5px solid rgba(0,0,0,0.2)
+  .copyrights
+    padding: 40px 0 0
+    line-height: 1.8
+    color: rgba(255,255,255,0.25)
+    background-color: rgba(0,0,0,0.2)
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1)
+    .copyright-block
+      margin-top: 20px
+      a
+        color: rgba(255,255,255,0.25)
+      .copyright-links
+        a
+          display: inline-block
+          margin: 0 3px
+          color: rgba(255,255,255,0.25)
+          border-bottom: 1px dotted #444
+          &:hover
+            color: #555
+            border-bottom: 1px dotted #666
+
+  .contact-details
+    font-size: 0.9em
+    a
+      color: rgba(255,255,255,0.25)
+      &:hover
+        color: rgba(255,255,255,0.45)
+        border-bottom: 1px dotted #444
+    .contact-email
+      margin: 1px 8px
+    .glyphicon
+      top: 2px
+
+// Social Icons
+.social-icons
+  .si
+    width: 32px
+    height: 32px
+    color: #555
+    line-height: 38px !important
+    text-shadow: none
+    border: 0
+    border-radius: 3px
+    overflow: hidden
+    display: inline-block
+    margin: 0 4px
+    text-align: center !important
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
+    cursor: pointer
+    font-style: normal
+    i
+      top: 0
+      &::before
+        font-size: 14px
+
+body:not(.device-touch)
+  .si
+    -webkit-transition: all .15s ease
+    -o-transition: all .15s ease
+    transition: all .15s ease
+    i
+      -webkit-transition: all .2s ease
+      -o-transition: all .2s ease
+      transition: all .2s ease
+.glyphicon-facebook::before
+  content: "\e124"
+.glyphicon-spotify::before
+  content: "\e124"
+.glyphicon-blogger::before
+  content: "\e124"
+.glyphicon-rss::before
+  content: "\e124"
+.glyphicon-twitter::before
+  content: "\e124"
+.glyphicon-youtube::before
+  content: "\e124"
+.glyphicon-wordpress::before
+  content: "\e124"
+
+.si-facebook:hover
+  background-color: #3B5998 !important
+  color: #FFF
+.si-spotify:hover
+  background-color: #81B71A !important
+  color: #333
+.si-rss:hover
+  background-color: #EE802F !important
+  color: #FFF
+.si-blogger:hover
+  background-color: #FC4F08 !important
+  color: #FFF
+.si-twitter:hover
+  background-color: #00ACEE !important
+  color: #FFF
+.si-youtube:hover
+  background-color: #C4302B !important
+  color: #FFF
+.si-gplus:hover
+  background-color: #DD4B39 !important
+  color: #FFF
+.si-wordpress:hover
+  background-color: #1E8CBE !important
+  color: #FFF

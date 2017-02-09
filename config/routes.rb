@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
-  namespace :dashboard do
+  
+  scope module: 'dashboard' do
     resources :artists, :albums, :lyrics
-    match '/' => 'dashboard#index', via: :get
+    match '/dashboard' => 'dashboard#index', via: :get, as: 'dashboard'
   end
 
   match '/about' => 'pages#about', via: :get

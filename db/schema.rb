@@ -10,31 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127213155) do
+ActiveRecord::Schema.define(version: 20170122184601) do
 
-  create_table "albums", force: :cascade do |t|
+  create_table "albums", id: false, force: :cascade do |t|
+    t.string   "uid",        limit: 9
     t.string   "title",      limit: 64
     t.integer  "year",       limit: 4
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.index ["uid"], name: "index_albums_on_uid", unique: true
   end
 
   create_table "albums_artists", force: :cascade do |t|
+    t.string   "uid",        limit: 9
+    t.string   "artist_uid", limit: 9
+    t.string   "album_uid",  limit: 9
     t.integer  "album_id"
     t.integer  "artist_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.index ["album_id"], name: "index_albums_artists_on_album_id"
     t.index ["artist_id"], name: "index_albums_artists_on_artist_id"
+    t.index ["uid"], name: "index_albums_artists_on_uid", unique: true
   end
 
-  create_table "artists", force: :cascade do |t|
-    t.string   "name",       limit: 64
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+  create_table "artists", id: false, force: :cascade do |t|
+    t.string   "uid",        limit: 9
+    t.string   "name"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["uid"], name: "index_artists_on_uid", unique: true
   end
 
-  create_table "lyrics", force: :cascade do |t|
+  create_table "lyrics", id: false, force: :cascade do |t|
+    t.string   "uid",        limit: 9
     t.string   "title",      limit: 64
     t.string   "writer",     limit: 64
     t.string   "composer",   limit: 64
@@ -43,15 +52,18 @@ ActiveRecord::Schema.define(version: 20170127213155) do
     t.integer  "views"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.index ["uid"], name: "index_lyrics_on_uid", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: false, force: :cascade do |t|
+    t.string   "uid",        limit: 9
     t.string   "username",   limit: 255
     t.string   "email",      limit: 255
     t.string   "password",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

@@ -1,5 +1,4 @@
 <%= form_for album do |f| %>
-<%=artists.inspect%>
 
   <% if album.errors.any? %>
     <div id="error_explanation">
@@ -12,5 +11,7 @@
     <% end %>
 
   <%= f.text_field :title %>
+  <%= f.text_field :year %>
+  <%= f.collection_select(:artists, Artist.all, :uid, :name, prompt: ' ') %>
   <%= f.submit "Create" %>
 <% end %>

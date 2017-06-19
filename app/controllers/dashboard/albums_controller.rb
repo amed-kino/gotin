@@ -6,7 +6,6 @@ class Dashboard::AlbumsController < Dashboard::DashboardController
 
   def new
 
-    @artists = Artist.all
     @album = Album.new
 
   end
@@ -22,7 +21,7 @@ class Dashboard::AlbumsController < Dashboard::DashboardController
 
   private
   def album_params
-    params.require(:album).permit(:name)
+    params.require(:album).permit(:title, :year)
   end
 
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gotin</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/cdn/bootstrap.css">
+    <script src="/cdn/jquery.js"></script>
+    <script src="/cdn/bootstrap.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="hk-wrap">
+      <header id="hk-header">
+        <%= render partial: "snippet/header" %>
+      </header>
+      <section id="hk-container">
+        <div id="hk-content" class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+          <%= yield %>
+        </div>
+        <div id="hk-sidebar" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+          <%= render partial: "snippet/sidebar" %>
+        </div>
+        <div class="clearfix"></div>
+      </section>
+      <footer id="hk-footer">
+        <%= render partial: "snippet/footer" %>
+
+      </footeR>
+      <div>
+  </body>
+</html>

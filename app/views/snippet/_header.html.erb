@@ -1,0 +1,21 @@
+<nav class="navbar">
+
+  <div id="top-menu">
+    <%= render partial: "snippet/header/top_menu" %>
+  </div>
+
+  <div class="container">
+    <div id="main-menu">
+      <%= render partial: "snippet/header/main_menu" %>
+    </div>
+      <div id="search" class="collapse navbar-collapse">
+        <div class="visible-xs">
+          <%= render partial: "snippet/header/search_bar" %>
+        </div>
+      </div>
+</div>
+
+<div id="letters" class="collapse navbar-collapse">
+  <%= render partial: "snippet/header/letters_board" %>
+</div>
+</nav>

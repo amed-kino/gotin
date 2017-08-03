@@ -1,0 +1,10 @@
+<ul class="nav navbar-nav">
+<%- Rails.application.config.alphabit.capital.each do |letter| %>
+  <li>
+    <a href="#">
+      <%=letter %>
+    </a>
+  </li>
+
+<%- end %>
+</ul>

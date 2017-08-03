@@ -8,5 +8,4 @@ class Album < ApplicationRecord
   def set_id
     uid_generate
   end
-
 end

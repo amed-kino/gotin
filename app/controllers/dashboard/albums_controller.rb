@@ -1,5 +1,4 @@
 class Dashboard::AlbumsController < Dashboard::DashboardController
-
   def index
     @albums = Album.all
   end
@@ -23,7 +22,4 @@ class Dashboard::AlbumsController < Dashboard::DashboardController
   def album_params
     params.require(:album).permit(:title, :year)
   end
-
-
-
 end

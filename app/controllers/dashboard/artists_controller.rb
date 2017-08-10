@@ -1,17 +1,9 @@
 class Dashboard::ArtistsController <  Dashboard::DashboardController
 
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @artists = Artist.all
-  end
-
-  def show
-  end
+  before_action :set_artist, only: [:edit, :update, :destroy, :show]
 
   def new
     @artist = Artist.new
-
   end
 
   def create
@@ -21,6 +13,26 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
       else
         render :new
       end
+  end
+
+  def edit
+  end
+
+  def update
+    if @artist.update(artist_params)
+      redirect_to @artist, notice: 'Artist has been updated successfully.'
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @artist.destroy
+    redirect_to artists_url, notice: 'Artist was successfully destroyed.'
+  end
+
+
+  def show
   end
 
   private

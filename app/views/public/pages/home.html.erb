@@ -1,0 +1,11 @@
+<hr />
+<ul>
+  <li>Home</li>
+</ul>
+<hr />
+<br/>
+<ul>
+  <%- @artists.each do |artist| %>
+    <li> <%= link_to(artist.name, public_artist_path(artist_id: artist.uid))  %></li>
+  <% end %>
+</ul>

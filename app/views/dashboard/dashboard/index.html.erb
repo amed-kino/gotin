@@ -1,1 +1,10 @@
 <h1>Dashboard</h1>
+<%- @artists.each do |artist| %>
+  <h3><%= link_to artist.name, artist %></h3>
+  <h3><%= artist.albums.inspect %></h3>
+  <ul>
+    <%- artist.albums.each do |album| %>
+      <li> <%= album.title %></li>
+    <% end %>
+  </ul>
+<% end %>

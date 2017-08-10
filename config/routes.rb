@@ -11,9 +11,6 @@ Rails.application.routes.draw do
     get 'lyrics/show'
   end
 
-  concern :beq do
-    resources :xiri_min
-  end
   scope 'dashboard', module: 'dashboard' do
     resources 'artists', :artists
     resources 'albums', :albums
@@ -27,7 +24,7 @@ Rails.application.routes.draw do
 
   match '/about' => 'public/pages#about', via: :get
   match '/contact' => 'public/pages#contact', via: :get
-  
+
   root 'public/pages#home'
 
 end

@@ -1,0 +1,13 @@
+<hr />
+<ul>
+  <li><%= link_to('Home', root_path) %></li>
+  <li>Artists#show</li>
+</ul>
+<hr />
+<br/>
+<h3><%= @artist.name %></h3>
+<ul>
+  <%- @artist.albums.each do |album| %>
+    <li><%= link_to(album.title, public_album_path(artist_id: @artist.uid, album_id: album.id)) %></li>
+  <% end %>
+</ul>

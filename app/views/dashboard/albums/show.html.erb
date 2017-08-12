@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @album.title %></h1>
+year: <%= @album.year %> <br/>
+uid: <%= @album.uid %> <br/>
+artists: <%= @album.artists.inspect %> <br/>
+<hr/>
+<%= link_to 'Show', @album %> |
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Destroy', @album, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<hr/>

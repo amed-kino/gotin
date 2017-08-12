@@ -22,16 +22,10 @@ ActiveRecord::Schema.define(version: 20170122184601) do
   end
 
   create_table "albums_artists", force: :cascade do |t|
-    t.string "uid", limit: 9
-    t.string "artist_uid", limit: 9
-    t.string "album_uid", limit: 9
-    t.integer "album_id"
-    t.integer "artist_id"
+    t.string "artist_id"
+    t.string "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id"], name: "index_albums_artists_on_album_id"
-    t.index ["artist_id"], name: "index_albums_artists_on_artist_id"
-    t.index ["uid"], name: "index_albums_artists_on_uid", unique: true
   end
 
   create_table "artists", id: false, force: :cascade do |t|

@@ -3,7 +3,8 @@ module UidGenerator
   extend ActiveSupport::Concern
   included do
     before_create :uid_generate
-    self.primary_key = 'uid'    
+    self.primary_key = 'uid'
+    self.order(created_at: :desc)
     default_scope { order(created_at: :asc) }
   end
   def uid_generate (length = 9)

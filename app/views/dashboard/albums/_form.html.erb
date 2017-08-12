@@ -10,8 +10,8 @@
     <% end %>
     <% end %>
 
-  <%= f.text_field :title %>
-  <%= f.text_field :year %>
+  <%= f.text_field :title %> Title <br/>
+  <%= f.text_field :year %> Year <br/>
   <%= f.collection_select(:artists, Artist.all, :uid, :name, prompt: ' ') %>
   <%= f.submit "Create" %>
 <% end %>

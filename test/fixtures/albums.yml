@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  album: 
-  artist: 
+  title: Album1
+  year: 9999
 
 two:
-  album: 
-  artist: 
+  title: Album2
+  year: 9999

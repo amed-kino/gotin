@@ -15,8 +15,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end

@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122184601) do
+ActiveRecord::Schema.define(version: 20170910203430) do
+
+  create_table "album_artist_contributes", force: :cascade do |t|
+    t.string "artist_id"
+    t.string "album_id"
+  end
 
   create_table "albums", id: false, force: :cascade do |t|
     t.string "uid", limit: 9

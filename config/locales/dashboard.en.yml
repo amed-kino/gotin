@@ -1,0 +1,11 @@
+en:
+  dashboard:
+    artists:
+      create:
+        notice: Artist has been saved successfully.
+        alert: Artist cannot be saved.
+      update:
+        notice: Artist has been updated successfully.
+        alert: Artist cannot be updated.
+      delete:
+        notice: Artist has been deleted.

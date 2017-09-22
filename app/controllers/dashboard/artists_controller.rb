@@ -8,11 +8,12 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
 
   def create
     @artist = Artist.new(artist_params)
-      if @artist.save
-        redirect_to @artist, notice: 'Artist has been saved successfully.'
-      else
-        render :new
-      end
+    if @artist.save
+      redirect_to @artist, notice: t('.notice')
+    else
+      flash[:alert] = t('.alert')
+      render :new
+    end
   end
 
   def edit
@@ -20,8 +21,9 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
 
   def update
     if @artist.update(artist_params)
-      redirect_to @artist, notice: 'Artist has been updated successfully.'
+      redirect_to @artist, notice: t('.notice')
     else
+      flash[:alert] = t('.alert')
       render :new
     end
   end
@@ -33,6 +35,7 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
 
 
   def show
+    
   end
 
   private

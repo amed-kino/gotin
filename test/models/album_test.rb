@@ -16,7 +16,6 @@ class AlbumTest < ActiveSupport::TestCase
     assert album.errors[:title].any?
 
     album.title = "Türkçe عربي"
-    byebug
     assert album.invalid?
     assert album.errors[:title].any?
 

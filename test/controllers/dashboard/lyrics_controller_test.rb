@@ -1,6 +1,6 @@
 # require 'test_helper'
 #
-# class Admin::LyricsControllerTest < ActionDispatch::IntegrationTest
+# class Dashboard::LyricsControllerTest < ActionDispatch::IntegrationTest
 #   # test "the truth" do
 #   #   assert true
 #   # end

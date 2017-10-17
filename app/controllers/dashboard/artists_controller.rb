@@ -16,6 +16,13 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
     end
   end
 
+  def add_album
+    
+  end
+
+  def add_to_album_as_contributer
+  end
+
   def edit
   end
 
@@ -35,7 +42,7 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
 
 
   def show
-    
+
   end
 
   private

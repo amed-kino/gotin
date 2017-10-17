@@ -1,7 +1,10 @@
+
 Rails.application.routes.draw do
 
   scope 'dashboard', module: 'dashboard' do
-    resources 'artists', :artists
+    resources 'artists', :artists do
+      post :add_album
+    end
     resources 'albums', :albums
     resources 'lyrics', :lyrics
     match '/' => 'dashboard#index', via: :get, as: 'dashboard'
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
   namespace :public do
     get 'lyrics/show'
   end
-  
+
   match '/about' => 'public/pages#about', via: :get
   match '/contact' => 'public/pages#contact', via: :get
 

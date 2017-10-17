@@ -16,6 +16,10 @@ class Dashboard::AlbumsController < Dashboard::DashboardController
       end
   end
 
+  def add_artist
+    
+  end
+
   def edit
   end
 

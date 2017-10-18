@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: gotin_development
+
+test:
+  <<: *default
+  database: gotin_test
+
+production:
+  <<: *default
+  database: gotin_production

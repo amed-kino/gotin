@@ -1,1 +1,4 @@
 # gotin
+
+### Database:
+**postgresql**

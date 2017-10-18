@@ -20,6 +20,7 @@ RSpec.describe Dashboard::ArtistsController do
     # album = Album.create({title: 'Album'})
     it 'refuses to add empty album or artists' do
       post 'add_album'
+      byebug
     end
   end
 end

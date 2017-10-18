@@ -5,7 +5,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 require 'capybara/rails'
 require 'rspec/rails'
-
 I18n.locale = :en
 
 ActiveRecord::Migration.maintain_test_schema!

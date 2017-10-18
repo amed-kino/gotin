@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170910203430) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "album_artist_contributes", force: :cascade do |t|
     t.string "artist_id"
     t.string "album_id"
@@ -20,17 +23,15 @@ ActiveRecord::Schema.define(version: 20170910203430) do
   create_table "albums", id: false, force: :cascade do |t|
     t.string "uid", limit: 9
     t.string "title", limit: 64
-    t.integer "year", limit: 4
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uid"], name: "index_albums_on_uid", unique: true
   end
 
-  create_table "albums_artists", force: :cascade do |t|
+  create_table "albums_artists", id: :serial, force: :cascade do |t|
     t.string "artist_id"
     t.string "album_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "artists", id: false, force: :cascade do |t|

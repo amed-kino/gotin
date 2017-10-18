@@ -1,6 +1,11 @@
 <%= render '/dashboard/shared/note' %>
 
 <h1>Dashboard</h1>
+<h2>Artists</h2>
 <%- @artists.each do |artist| %>
   <h3><%= link_to artist.name, artist %> ()</h3>
+<% end %>
+<h2>Albums</h2>
+<%- @albums.each do |album| %>
+  <h3><%= link_to album.title, album %> (<%= album.year %>)</h3>
 <% end %>

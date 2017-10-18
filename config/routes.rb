@@ -2,9 +2,11 @@
 Rails.application.routes.draw do
 
   scope 'dashboard', module: 'dashboard' do
-    resources 'artists', :artists do
-      post :add_album
+    resources 'artists', :artists
+    controller :artists do
+      post 'artists/add_album/' => :add_album, as: 'artist_add_album'
     end
+
     resources 'albums', :albums
     resources 'lyrics', :lyrics
     match '/' => 'dashboard#index', via: :get, as: 'dashboard'

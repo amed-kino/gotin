@@ -1,0 +1,22 @@
+<h4>albums</h4>
+<ul>
+  <%- artist.albums.each do |album| %>
+    <li><%= album.title %></li>
+  <% end %>
+</ul>
+<br>----------------<br>
+<%= form_for 'beq', url: artist_add_album_path(artist.id) do |f| %>
+  <% if artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+
+      <ul>
+      <% artist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+    <% end %>
+  <%=  f.label(:add_as_album) %>
+  <%=  f.radio_button :add_as_album, 'Select me'  %>
+  <%= f.collection_select(:albums, Artist.all, :uid, :name, prompt: ' ') %>
+  <%= f.submit "Create" %>
+<% end %>

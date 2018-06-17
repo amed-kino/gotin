@@ -17,7 +17,12 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
   end
 
   def add_album
-    
+    redirect_back_or_root( alert: t('.alert_no_params') ) and return unless ( params[:aritst_id].present? && params[:album_id].present? )
+    if album_belongs_to_artist(params[:artist_id], params[:album_id])
+      redirect_to @artist, notice: t('.notice')
+    else
+      edit
+    end
   end
 
   def add_to_album_as_contributer
@@ -45,7 +50,12 @@ class Dashboard::ArtistsController <  Dashboard::DashboardController
 
   end
 
-  private
+  protected
+
+  def album_belongs_to_artist(artist_id, album_id)
+    !!Artist.find(artist_id).albums.find(album_id)
+  end
+
   def artist_params
     params.require(:artist).permit(:name)
   end
